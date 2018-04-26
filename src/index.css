@@ -8,25 +8,114 @@
   src: url('./fonts/amazonBold.woff2') format('woff2');
 }
 
-body {
-  margin: 30px;
-  font-size: 25px;
-  font-family: 'AmazonFont', sans-serif;;
-}
+
+  .HeaderImage {
+    background-image: url(./Images-To-Redis/ShamazonHeader.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: auto;
+    height: 175px;
+    margin: 0 auto;
+    max-height: 100%;
+  }
+
+  .HaveQuestion {
+    background-image: url(./Images-To-Redis/HaveQuestion.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: auto;
+    height: 200px;
+    margin: 0 auto;
+    max-height: 100%;
+  }
+
+  .FrequentlyBought {
+    background-image: url(./Images-To-Redis/FrequentlyBought.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: auto;
+    height: 340px;
+    margin: 0 auto;
+    max-height: 100%;
+  }
+
+  .FooterImage {
+    background-image: url(./Images-To-Redis/FooterImage.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 100%;
+    height: 900px;
+    margin: 0 auto;
+    max-height: 100%;
+  }
+
+
+
   b {
     font-family: 'AmazonFontBold', sans-serif;;
     font-weight: 700;
   }
 
-.App {
-  font-family: 'AmazonFont', sans-serif;
-  font-size: 13px;
-  line-height: 19px;
-  color: #111;
-  display:flex;
-  width: 33%;
-}
+  .flexBoxStart {
+    padding: 35px 0px 0px 30px;
+    margin: 0;
+    list-style: none;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+  }
 
+  .AndyFlexBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .App {
+    /* flex-direction: column; */
+    /* justify-content: space-evenly; */
+    /* flex: auto; */
+    flex-direction: column;
+    padding: 0 0 0 15px;
+    flex-wrap: nowrap;
+    font-family: 'AmazonFont';
+    transition: transform .2s;
+    width: 45%;
+  }
+
+  .PurchaseImage {
+    display: flex;
+    background-image: url(./Images-To-Redis/PurchaseImage.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 33%;
+    height: 700px;
+  }
+  .main {
+    display: flex;
+    /* align-items: center; */
+    transition: transform .2s;
+    width: 33%;
+    /* height: 33%; */
+  }
+  .photo-list {
+
+    /* display:  flex;  */
+    
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;    
+    /* float: left; */
+  }
 
 .priceBox {
   display:flex;
@@ -49,11 +138,9 @@ li::before {
   color: #949494;
   display: inline-block; 
   width: 1em;
-  margin-left: -1em}
-
-.App-intro {
-  font-size: 1005px;
+  margin-left: -1em
 }
+
 
 a, a:visited, a:active {
   color: #0066c0;
@@ -160,4 +247,121 @@ a:hover {
 
 
 
+
+
+
+.photo {
+  height: 4em;
+  border-radius: 3px;
+}
+
+.photo:hover {
+  box-shadow: 0px 1px 8px 1px #f89820;  
+  border: 1px solid #f89820;
+}
+
+.modalContainer {
+  display: flex;
+}
+
+.modalDivName {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-end;
+  font-size: 20px;
+  font-family: helvetica;
+}
+
+.modalDivDescription {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-end;
+  font-family: helvetica;
+  font-size: 140px;
+  color: red;
+}
+
+.modalPic {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 40px;
+}
+
+.modalListContainer {
+  display: flex;
+}
+
+
+
+.description {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-family: helvetica;
+  color: rgb(102, 101, 101)
+}
+
+.close {
+  position: relative;
+  float: right;
+  border: 1px solid white;
+}
+
+
+.zoom {
+  margin: 0 auto;
+  text-align: center;
+  /* align-items: baseline; */
+
+}
+
+.zoom:hover {
+  text-align: center;
+  
+  /* transform: scale(1.25);  */
+}
+
+.zoomImage {
+  /* align-self: baseline; */
+  height: 15em;
+  padding-left: 5px;
+  
+  border-radius: 5px;
+}
+
+.shamazon {
+  height: 3em;
+}
+
+.perimeter {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  flex: 0 0 100%;
+}
+
+.copy {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+@media (min-width: 415px) {
+  .perimeter {
+    flex-direction: row;
+  }
+  
+  .image {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 800px) {
+  .image {
+    flex: 0 0 33.5%;
+  }
+}
 

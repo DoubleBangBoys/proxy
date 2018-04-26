@@ -8,14 +8,15 @@ import CustomerReviews from './customerReviews';
 import PriceBox from './PriceBox';
 import Stock from './Stock';
 import ItemDescription from './ItemDescription';
+import '../../src/index.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
-     
-    App.defaultProps = {
-      id: 0,
-    };
+
+    // App.defaultProps = {
+    //   id: 0,
+    // };
 
     //  sample Data
     this.state = {
@@ -28,7 +29,6 @@ class App extends Component {
         'Description 5': 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros.',
         'Inventory Amount': 0,
         'Is Customer Prime Member?': false,
-        // currently Prime Member does nothing. All shows as Prime
         Price: 3555,
         ProductKey: 1,
         'Review Total': 0,
@@ -45,6 +45,14 @@ class App extends Component {
   }
 
   componentWillMount() {
+    this.getnew();
+  }
+
+  componentWillReceiveProps() {
+    this.getnew();
+  }
+
+  getnew() {
     this.serverRequest = axios.get(`http://localhost:4000/products/${this.props.id}`).then((res) => {
       this.setState({
         data: res.data,
@@ -53,7 +61,6 @@ class App extends Component {
       throw err;
     });
   }
-
 
   getArraysAndRender() {
     const array = [];
