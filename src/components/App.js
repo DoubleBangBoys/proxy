@@ -52,6 +52,7 @@ class App extends Component {
   }
 
   getnew() {
+    // console.log(this.props.id);
     this.serverRequest = axios.get(`/products/${this.props.id}`).then((res) => {
       this.setState({
         data: res.data,

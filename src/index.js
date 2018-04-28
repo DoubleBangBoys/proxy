@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Modal from 'react-modal';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router-3';
+import Modal from 'react-modal';
 
 import AndyIsCool from './components/OtherCompos/Photo-Gallery-Server/client/src/components/app';
 import ZachIsKing from './components/OtherCompos/Related-Items-Server/client/src/components/App';
