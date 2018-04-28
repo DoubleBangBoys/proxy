@@ -8,9 +8,9 @@ const path = require('path');
 const pgp = require('pg-promise')();
 
 const config = {
-  host: 'localhost',
+  host: 'db',
   user: 'shamazon', // env var: PGUSER
-  database: 'shamazondb', // env var: PGDATABASE
+  database: 'shamazon', // env var: PGDATABASE
   password: null, // env var: PGPASSWORD
   port: 5432, // env var: PGPORT
 };
@@ -29,10 +29,17 @@ app.get('/products/:productkey', (req, res) => {
   });
 });
 
-const CompiledFiles = path.join(__dirname, '..', 'public');
+const CompiledFiles = path.join(__dirname, '..', 'build');
+
 
 app.use(express.static(CompiledFiles));
+
+app.get('/:id', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+});
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.listen(4000);
+app.listen(process.env.PORT || 4000);
+

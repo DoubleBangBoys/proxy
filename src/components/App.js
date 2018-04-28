@@ -17,7 +17,6 @@ class App extends Component {
     // App.defaultProps = {
     //   id: 0,
     // };
-
     //  sample Data
     this.state = {
       data: [{
@@ -53,7 +52,7 @@ class App extends Component {
   }
 
   getnew() {
-    this.serverRequest = axios.get(`http://localhost:4000/products/${this.props.id}`).then((res) => {
+    this.serverRequest = axios.get(`/products/${this.props.id}`).then((res) => {
       this.setState({
         data: res.data,
       });

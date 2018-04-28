@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router-3';
 import Modal from 'react-modal';
-
+import { Router, Route, browserHistory, IndexRoute } from 'react-router-3';
 
 import AndyIsCool from './components/OtherCompos/Photo-Gallery-Server/client/src/components/app';
 import ZachIsKing from './components/OtherCompos/Related-Items-Server/client/src/components/App';
@@ -17,7 +16,9 @@ const indexRender = (props) => {
     <div>
       <div className="HeaderImage" />
       <div className="flexBoxStart">
-        <AndyIsCool id={id} Modal={Modal} />
+        <AndyIsCool id={id}
+        Modal={Modal} 
+        />
         <App id={id} />
         <div className="PurchaseImage" />
       </div>
