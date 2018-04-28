@@ -8,64 +8,145 @@
   src: url('./fonts/amazonBold.woff2') format('woff2');
 }
 
-  b {
-    font-family: 'AmazonFontBold', sans-serif;;
-    font-weight: 700;
-  }
+/* 
+  Global Definitions for Classes
+*/
 
-  .flexBoxStart {
-    padding: 35px 0px 0px 30px;
-    margin: 0;
-    list-style: none;
-    -ms-box-orient: horizontal;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: flex;
-  }
+b {
+  font-family: 'AmazonFontBold', sans-serif;;
+  font-weight: 700;
+}
 
-  .AndyFlexBox {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-
-  .App {
-    flex-direction: column;
-    padding: 0 0 0 15px;
-    flex-wrap: nowrap;
-    font-family: 'AmazonFont';
-    transition: transform .2s;
-    width: 45%;
-  }
+/* 
+  Flexbox Container for Photo Gallery Component and Amazon Description at Top of Page
+ */
 
  
-  .main {
-    display: flex;
-    /* align-items: center; */
-    transition: transform .2s;
-    width: 33%;
-    /* height: 33%; */
-  }
-  .photo-list {
+ /*
+   Flexbox Highest Level
+  */
+.flexBoxStart {
+  padding: 35px 0px 0px 30px;
+  margin: 0;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+/* Second level of Flexbox  */
+.AndyFlexBox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
 
-    /* display:  flex;  */
-    
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-wrap: nowrap;    
-    /* float: left; */
-  }
+.App {
+  flex-direction: column;
+  padding: 0 0 0 15px;
+  flex-wrap: nowrap;
+  font-family: 'AmazonFont';
+  transition: transform .2s;
+  width: 45%;
+}
+  /* Third Level of Flexbox */
+.main {
+  display: flex;
+  transition: transform .2s;
+  width: 33%;
+}
 
+.photo-list {
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;    
+} 
+  /* END OF FLEXBOX */
+
+  /*  General Styling for Layout on index.js entry point */
+  
+.bucketDivider {
+  display: block;
+  /* line-height: 19px; */
+  border-top: 1px solid #ccc;
+  margin-top: 2em;
+  margin-bottom: -1em!important;
+  height: 3em;
+}
+
+.footerDivider {
+  height: 3em;
+}
+
+
+
+.HeaderImage {
+  background-image: url(./Images-To-Redis/ShamazonHeader.png);
+  overflow: hidden;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 0;
+  padding-bottom: 10%;
+  width: 100%;
+}
+
+.HaveQuestion {
+  background-image: url(./Images-To-Redis/HaveQuestion.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  width: 100%;
+  height: 0;
+  padding-bottom: 15%;
+  max-height: 100%;
+}
+
+.FrequentlyBought {
+  background-image: url(./Images-To-Redis/FrequentlyBought.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  width: auto;
+  height: 0px;
+  padding-bottom: 15%;
+  max-height: 100%;
+}
+
+
+.FooterImage {
+  background-image: url(./Images-To-Redis/FooterImage.png);
+  height: 0;
+  max-height: 100%;
+  padding-top: 60%;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.PurchaseImage {
+  display: flex;
+  background-image: url(./Images-To-Redis/PurchaseImage.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  width: 33%;
+  height: 700px;
+}
+
+/* CSS for Description Component */
 .priceBox {
   display:flex;
 }
 .col1{
   padding: 0px 5px 0px 0px;
 }
-.fivepxLeft{
+
+.fifteenpxLeft{
   padding: 0px 0px 0px 15px;
 }
 
@@ -82,7 +163,6 @@ li::before {
   width: 1em;
   margin-left: -1em
 }
-
 
 a, a:visited, a:active {
   color: #0066c0;
@@ -187,11 +267,7 @@ a:hover {
   font-weight: 400;
 }
 
-
-
-
-
-
+/* CSS for Photo Gallery Server */
 .photo {
   height: 4em;
   border-radius: 3px;
@@ -234,7 +310,6 @@ a:hover {
 }
 
 
-
 .description {
   display: flex;
   justify-content: center;
@@ -253,18 +328,13 @@ a:hover {
 .zoom {
   margin: 0 auto;
   text-align: center;
-  /* align-items: baseline; */
-
 }
 
 .zoom:hover {
   text-align: center;
-  
-  /* transform: scale(1.25);  */
 }
 
 .zoomImage {
-  /* align-self: baseline; */
   height: 15em;
   padding-left: 5px;
   
@@ -308,59 +378,7 @@ a:hover {
 }
 
 
-.HeaderImage {
-  background-image: url(./Images-To-Redis/ShamazonHeader.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  width: auto;
-  height: 175px;
-  margin: 0 auto;
-  max-height: 100%;
-}
-
-.HaveQuestion {
-  background-image: url(./Images-To-Redis/HaveQuestion.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  width: auto;
-  height: 200px;
-  margin: 0 auto;
-  max-height: 100%;
-}
-
-.FrequentlyBought {
-  background-image: url(./Images-To-Redis/FrequentlyBought.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  width: auto;
-  height: 340px;
-  margin: 0 auto;
-  max-height: 100%;
-}
-
-.FooterImage {
-  background-image: url(./Images-To-Redis/FooterImage.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  width: 100%;
-  height: 900px;
-  margin: 0 auto;
-  max-height: 100%;
-}
-.PurchaseImage {
-  display: flex;
-  background-image: url(./Images-To-Redis/PurchaseImage.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  width: 33%;
-  height: 700px;
-}
-
+/* CSS for related products */
 
 .relatedProducts {
   display: inline-block;

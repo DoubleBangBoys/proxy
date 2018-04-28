@@ -14,10 +14,6 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // App.defaultProps = {
-    //   id: 0,
-    // };
-    //  sample Data
     this.state = {
       data: [{
         'Brand Name': 'Oxygen',
@@ -51,9 +47,9 @@ class App extends Component {
     this.getnew();
   }
 
+  // ON PRODUCTION CHANGE LOCAL HOST FROM http://localhost:4000/products/${this.props.id} `/products/${this.props.id}`
   getnew() {
-    // console.log(this.props.id);
-    this.serverRequest = axios.get(`/products/${this.props.id}`).then((res) => {
+    this.serverRequest = axios.get(`http://52.14.248.199:4000/products/${this.props.id}`).then((res) => {
       this.setState({
         data: res.data,
       });
@@ -61,6 +57,11 @@ class App extends Component {
       throw err;
     });
   }
+
+  /**
+    * Gets the arrays from Description Data and pushes it into an array to prevent
+    * a secondary call to database.
+   */
 
   getArraysAndRender() {
     const array = [];
@@ -128,8 +129,6 @@ class App extends Component {
     }
     return (<div id="notInStock" className="colorRed size-medium"> Currently Unavailable </div>);
   }
-
-  //  Refactor Description into Array. Do it in Database Query after MVP
 
   render() {
     return (
