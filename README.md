@@ -99,12 +99,15 @@ npm install
 The following technologies were used in this project:
 
     Outside technologies:
+    
     Create React App v1.5.2
     Docker  v18.03.1
     Postgres v10.3,
     MongoDB v3.6.3,
-    
-    Within package.json: 
+    Jest v5.6.0,
+    Enzyme v5.6.0
+
+    Build Dependencies:
     
     axios 0.18.0,
     body-parser 1.18.2,
@@ -122,23 +125,23 @@ The following technologies were used in this project:
 
 ### Pitfalls
 
-1) No database config file was used in this project. The server and database is configurated in server/server.js
-2) Program is compiled using react create app. If webpack is needed, ***WARNING*** you are able to use npm run eject. *** However, this is irreversible. Please do this on a seperate branch as it may break.
-3) When Deploying to Production:
+3. No database config file was used in this project. The server and database is configurated in server/server.js
+3. Program is compiled using react create app. If webpack is needed, ***WARNING*** you are able to use npm run eject. *** However, this is irreversible. Please do this on a seperate branch as it may break.
+3. When Deploying to Production:
 
   1) Point the server from targeting ../public to ../build then: 
   2a) Change the relative file path for get requests in src/components/App.js to target itself.
-    - for Server: server/server.js from line 32-35
-    - for App.js: src/components/App.js from line 50
+     ```for Server: server/server.js from line 32-35
+     for App.js: src/components/App.js from line 50```
   OR
   2b) Alternatively, host the client in App and the hosted Server on two different ports. If this is done, the file path for client App must point towards the Server.
   3) Run npm build
   4) Launch the server.
  
 
-4) A run script is currently used to deploy Docker. When writing your own run script, remember to use chmod +x <filename> or else Docker will not be able to execute the script.
+3. A run script is currently used to deploy Docker. When writing your own run script, remember to use chmod +x <filename> or else Docker will not be able to execute the script.
 
-5) Significant documentation was made in the Proxy Description Server fork. If you are using this file, please refer to the documentation here if you are lost. Note: Every project was coded seperately, so functionality may be difference across different proxies in this group.
+3. Significant documentation was made in the Proxy Description Server fork. If you are using this file, please refer to the documentation here if you are lost. Note: Every project was coded seperately, so functionality may be difference across different proxies in this group.
 
 ### Important File Paths
  - Router is located in src/index.js
