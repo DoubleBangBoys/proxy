@@ -56,6 +56,7 @@ In order to build, please do the following:
 2. move the description-server.sql from the server/Example-Data/description-server.sql file into the same directory as the docker-compose.yml file.
 2. Create a docker compose file! It should like this:
 
+```
 version: '3'
 
 services:
@@ -69,6 +70,7 @@ services:
       - ./Description-Server.sql:/docker-entrypoint-initdb.d/Description-Server.sql
     ports:
       - "5432:5432"
+```
 
   app: 
     image: 'myimage' 
@@ -77,10 +79,12 @@ services:
     ports:
       - '4000:4000'
 
-    NOTE: When a docker image is using a string, that means it is referring to the name of the image. 
-    
-    This may fail if your image is not named 'myimage' or if any of your ports are in use on your docker server! 
-    
+    NOTE: When a docker image is using a string, that means it 
+    is referring to the name of the image. 
+
+    This may fail if your image is not named 'myimage' or if any of 
+    your ports are in use on your docker server! 
+
     Read up on Docker kill if a port error happens! https://docs.docker.com/engine/reference/commandline/kill/
 
     NOTE 2: Spacing and syntax needs to be exact. 
@@ -99,9 +103,9 @@ npm install
 The following technologies were used in this project:
 
     Outside technologies:
-    
+
     Create React App v1.5.2
-    Docker  v18.03.1
+    Docker v18.03.1
     Postgres v10.3,
     MongoDB v3.6.3,
     Jest v5.6.0,
@@ -131,8 +135,10 @@ The following technologies were used in this project:
 
   1) Point the server from targeting ../public to ../build then: 
   2a) Change the relative file path for get requests in src/components/App.js to target itself.
-     ```for Server: server/server.js from line 32-35
-     for App.js: src/components/App.js from line 50```
+     ```
+     for Server: server/server.js from line 32-35
+     for App.js: src/components/App.js from line 50
+     ```
   OR
   2b) Alternatively, host the client in App and the hosted Server on two different ports. If this is done, the file path for client App must point towards the Server.
   3) Run npm build
