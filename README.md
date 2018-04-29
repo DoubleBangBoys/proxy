@@ -14,11 +14,11 @@
 
 1. [Usage](#usage)
 1. [Requirements](#requirements)
-1. [Building-for-Deployment](#building-for-deployment)
-1. [Local-Deployment](#deployment-to-localhost)
+1. [Building for Deployment](#building-for-deployment)
+1. [Local Deployment](#deployment-to-localhost)
 1. [TechStack](#techstack)
 1. [Pitfalls](#pitfalls)
-1. [Important-File-Paths](#important-file-paths)
+1. [Important File Paths](#important-file-paths)
 
 ## Usage
 
