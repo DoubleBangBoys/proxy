@@ -14,7 +14,7 @@
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Building for Deployment](#Building for Deployment)
+1. [Building for Deployment](#Building-for-Deployment)
 1. [Local Deployment](#Deployment)
 1. [TechStack](#TechStack)
 1. [Pitfalls](#pitfalls)
