@@ -48,7 +48,7 @@ In order to build, please do the following:
   3) type: npm run build
   4) type: npm run server
  
-## Deployment-to-Localhost
+## Deployment to Localhost
 
 2. Build as mentioned in [Build](#Build).
 2. In your terminal run `docker build -t myimage .` in the root directory
@@ -140,7 +140,7 @@ The following technologies were used in this project:
 
 5) Significant documentation was made in the Proxy Description Server fork. If you are using this file, please refer to the documentation here if you are lost. Note: Every project was coded seperately, so functionality may be difference across different proxies in this group.
 
-### Important-File-Paths
+### Important File Paths
  - Router is located in src/index.js
  - Shamazon Description Component is located in src/components/
  - All other components are located in:
