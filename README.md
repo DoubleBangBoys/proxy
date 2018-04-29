@@ -14,10 +14,11 @@
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
+1. [Building for Deployment](#Building)
 1. [Local Deployment](#Deployment)
-1. [AWS Deployment](#Deploment)
 1. [TechStack](#TechStack)
 1. [Pitfalls](#pitfalls)
+1. [ImportantFilePaths](#ImportantFilePaths)
 
 ## Usage
 
@@ -29,6 +30,8 @@ In the second: type npm start
 
 You will notice there is no database! You must seed and create one yourself. The database port in use is currently 5432. 4 sample database dumps are located and named for each component is located in server.js. The ports used in this project are 5432 for Postgres and 27017 for Mongo. 
 
+
+## Building for Deployment
 In order to build, please do the following:
 
   1) Point the server file in server/server.js from targeting ['..', 'public'] to  ['..', 'build'] then: 
@@ -47,10 +50,10 @@ In order to build, please do the following:
 
 ## Deployment to Localhost
 
-2. Build as mentioned in [Usage](#Usage).
+2. Build as mentioned in [Build](#Build).
 2. In your terminal run `docker build -t myimage .` in the root directory
 2. type touch docker-compose.yml file in a seperate directory.
-2. move the description-server.sql file into the same directory as the docker-compose.yml file.
+2. move the description-server.sql from the server/Example-Data/description-server.sql file into the same directory as the docker-compose.yml file.
 2. Create a docker compose file! It should like this:
 
 version: '3'
@@ -74,7 +77,11 @@ services:
     ports:
       - '4000:4000'
 
-    NOTE: When a docker image is using a string, that means it is referring to the name of the image. This may fail if your image is not named 'myimage' or if any of your ports are in use on your docker server! Read up on Docker kill if a port error happens! 
+    NOTE: When a docker image is using a string, that means it is referring to the name of the image. 
+    
+    This may fail if your image is not named 'myimage' or if any of your ports are in use on your docker server! 
+    
+    Read up on Docker kill if a port error happens! https://docs.docker.com/engine/reference/commandline/kill/
 
     NOTE 2: Spacing and syntax needs to be exact. 
 
@@ -133,7 +140,11 @@ The following technologies were used in this project:
 
 5) Significant documentation was made in the Proxy Description Server fork. If you are using this file, please refer to the documentation here if you are lost. Note: Every project was coded seperately, so functionality may be difference across different proxies in this group.
 
-
+### ImportantFilePaths
+ - Router is located in src/index.js
+ - Shamazon Description Component is located in src/components/
+ - All other components are located in:
+  src/components/OtherCompos
 
 
 
