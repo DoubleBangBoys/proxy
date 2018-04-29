@@ -78,7 +78,6 @@ services:
       - ./Description-Server.sql:/docker-entrypoint-initdb.d/Description-Server.sql
     ports:
       - "5432:5432"
-```
 
   app: 
     image: 'myimage' 
@@ -86,6 +85,8 @@ services:
       - 'db'
     ports:
       - '4000:4000'
+
+```
 
     NOTE: When a docker image is using a string, that means it 
     is referring to the name of the image. 
