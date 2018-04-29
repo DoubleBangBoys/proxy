@@ -47,9 +47,9 @@ class App extends Component {
     this.getnew();
   }
 
-  // ON PRODUCTION CHANGE LOCAL HOST FROM http://localhost:4000/products/${this.props.id} `/products/${this.props.id}`
+  // ON PRODUCTION UNCOMMNENT getnew() here and COMMENT OUT THE OTHER getnew()
   getnew() {
-    this.serverRequest = axios.get(`http://52.14.248.199:4000/products/${this.props.id}`).then((res) => {
+    this.serverRequest = axios.get(`products/${this.props.id}`).then((res) => {
       this.setState({
         data: res.data,
       });
@@ -58,6 +58,16 @@ class App extends Component {
     });
   }
 
+  // ON DEVELOPMENT UNCOMMNENT getnew() above and COMMENT OUT THE OTHER getnew()
+  // getnew() {
+  //   this.serverRequest = axios.get(`http://localhost:4000/products/${this.props.id}`).then((res) => {
+  //     this.setState({
+  //       data: res.data,
+  //     });
+  //   }).catch((err) => {
+  //     throw err;
+  //   });
+  // }
   /**
     * Gets the arrays from Description Data and pushes it into an array to prevent
     * a secondary call to database.

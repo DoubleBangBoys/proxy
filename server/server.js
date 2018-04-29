@@ -29,10 +29,12 @@ app.get('/products/:productkey', (req, res) => {
   });
 });
 
-// ON PRODUCTION: USE THIS ONE const CompiledFiles = path.join(__dirname, '..', 'build');
+// ON PRODUCTION: UNCOMMENT THIS ONE:
 
-// ON DEV: USE THIS ONE AND RUN NPM START AND NPM SERVER
-const CompiledFiles = path.join(__dirname, '..', 'public');
+const CompiledFiles = path.join(__dirname, '..', 'build');
+
+// ON DEV: UNCOMMENT THIS AND COMMMENT OUT THE OTHER ONE:
+// const CompiledFiles = path.join(__dirname, '..', 'public');
 
 
 app.use(express.static(CompiledFiles));

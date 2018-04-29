@@ -1,6 +1,6 @@
 # Project Name
 
-> This is Shamazon, a clone of Amazon that aims to replicate the functionality of its Photo Gallery, Related Items, and Review Server, and Product Description. Due to the complexitiy of Amazon and time constraints, full completion wasn't feasible. However, these files do work as a proof of concept and can be expanded further. Within my project there are stretch goals that will be done at a later time.
+> This is Shamazon, a clone of Amazon that aims to replicate the functionality of its Photo Gallery, Related Items, and Review Server, and Product Description. Due to the complexitiy of Amazon and time constraints, full completion wasn't feasible. However, these files do work as a proof of concept and can be expanded further. Within my project there are stretch goals that I consider to be next steps.
 
 
 ## Related Projects
@@ -14,7 +14,8 @@
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Development](#development)
+1. [Local Deployment](#Deployment)
+1. [AWS Deployment](#Deploment)
 1. [TechStack](#TechStack)
 1. [Pitfalls](#pitfalls)
 
@@ -27,7 +28,6 @@ In the first: type npm run server
 In the second: type npm start
 
 You will notice there is no database! You must seed and create one yourself. The database port in use is currently 5432. 4 sample database dumps are located and named for each component is located in server.js. The ports used in this project are 5432 for Postgres and 27017 for Mongo. 
-
 
 In order to build, please do the following:
 
@@ -43,9 +43,42 @@ In order to build, please do the following:
 
 ## Requirements
 
-- Node 9.4
+- Node 9.4.0 or higher
 
-## Development
+## Deployment to Localhost
+
+2. Build as mentioned in [Usage](#Usage).
+2. In your terminal run `docker build -t myimage .` in the root directory
+2. type touch docker-compose.yml file in a seperate directory.
+2. move the description-server.sql file into the same directory as the docker-compose.yml file.
+2. Create a docker compose file! It should like this:
+
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment: 
+      POSTGRES_USER: shamazon
+      POSTGRES_DB: shamazon
+    volumes:
+      - ./Description-Server.sql:/docker-entrypoint-initdb.d/Description-Server.sql
+    ports:
+      - "5432:5432"
+
+  app: 
+    image: 'myimage' 
+    depends_on: 
+      - 'db'
+    ports:
+      - '4000:4000'
+
+    NOTE: When a docker image is using a string, that means it is referring to the name of the image. This may fail if your image is not named 'myimage' or if any of your ports are in use on your docker server! Read up on Docker kill if a port error happens! 
+
+    NOTE 2: Spacing and syntax needs to be exact. 
+
+2. docker-compose up
 
 ### Installing Dependencies
 
@@ -98,7 +131,8 @@ The following technologies were used in this project:
 
 4) A run script is currently used to deploy Docker. When writing your own run script, remember to use chmod +x <filename> or else Docker will not be able to execute the script.
 
-5) Significant documentation was made in the Proxy Description Server fork. If you are using this file, please refer to the documentation here if you are lost.
+5) Significant documentation was made in the Proxy Description Server fork. If you are using this file, please refer to the documentation here if you are lost. Note: Every project was coded seperately, so functionality may be difference across different proxies in this group.
+
 
 
 
