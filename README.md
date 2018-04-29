@@ -14,7 +14,7 @@
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Building for Deployment](#Building)
+1. [Building for Deployment](#Building for Deployment)
 1. [Local Deployment](#Deployment)
 1. [TechStack](#TechStack)
 1. [Pitfalls](#pitfalls)
@@ -31,6 +31,11 @@ In the second: type npm start
 You will notice there is no database! You must seed and create one yourself. The database port in use is currently 5432. 4 sample database dumps are located and named for each component is located in server.js. The ports used in this project are 5432 for Postgres and 27017 for Mongo. 
 
 
+
+## Requirements
+
+- Node 9.4.0 or higher
+
 ## Building for Deployment
 In order to build, please do the following:
 
@@ -43,11 +48,6 @@ In order to build, please do the following:
   3) type: npm run build
   4) type: npm run server
  
-
-## Requirements
-
-- Node 9.4.0 or higher
-
 ## Deployment to Localhost
 
 2. Build as mentioned in [Build](#Build).
@@ -140,7 +140,7 @@ The following technologies were used in this project:
 
 5) Significant documentation was made in the Proxy Description Server fork. If you are using this file, please refer to the documentation here if you are lost. Note: Every project was coded seperately, so functionality may be difference across different proxies in this group.
 
-### ImportantFilePaths
+### Important File Paths
  - Router is located in src/index.js
  - Shamazon Description Component is located in src/components/
  - All other components are located in:
