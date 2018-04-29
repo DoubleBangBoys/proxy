@@ -12,13 +12,13 @@
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+1. [Usage](#usage)
 1. [Requirements](#requirements)
-1. [Building-for-Deployment](#Building-for-Deployment)
-1. [Local-Deployment](#Deployment-to-Localhost)
-1. [TechStack](#TechStack)
+1. [Building-for-Deployment](#building-for-deployment)
+1. [Local-Deployment](#deployment-to-localhost)
+1. [TechStack](#techstack)
 1. [Pitfalls](#pitfalls)
-1. [Important-File-Paths](#Important-File-Paths)
+1. [Important-File-Paths](#important-file-paths)
 
 ## Usage
 
@@ -128,8 +128,8 @@ The following technologies were used in this project:
 
   1) Point the server from targeting ../public to ../build then: 
   2a) Change the relative file path for get requests in src/components/App.js to target itself.
-  - for Server: server/server.js from line 32-35
-  - for App.js: src/components/App.js from line 50
+    - for Server: server/server.js from line 32-35
+    - for App.js: src/components/App.js from line 50
   OR
   2b) Alternatively, host the client in App and the hosted Server on two different ports. If this is done, the file path for client App must point towards the Server.
   3) Run npm build
