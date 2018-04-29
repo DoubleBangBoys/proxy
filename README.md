@@ -36,7 +36,7 @@ You will notice there is no database! You must seed and create one yourself. The
 
 - Node 9.4.0 or higher
 
-## Building-for-Deployment
+## Building for Deployment
 In order to build, please do the following:
 
   1) Point the server file in server/server.js from targeting ['..', 'public'] to  ['..', 'build'] then: 
