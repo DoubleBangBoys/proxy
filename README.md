@@ -15,7 +15,7 @@
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Building for Deployment](#Building-for-Deployment)
-1. [Local Deployment](#Deployment)
+1. [Local Deployment](#Deployment-to-Localhost)
 1. [TechStack](#TechStack)
 1. [Pitfalls](#pitfalls)
 1. [ImportantFilePaths](#ImportantFilePaths)
@@ -36,7 +36,7 @@ You will notice there is no database! You must seed and create one yourself. The
 
 - Node 9.4.0 or higher
 
-## Building for Deployment
+## Building-for-Deployment
 In order to build, please do the following:
 
   1) Point the server file in server/server.js from targeting ['..', 'public'] to  ['..', 'build'] then: 
@@ -48,7 +48,7 @@ In order to build, please do the following:
   3) type: npm run build
   4) type: npm run server
  
-## Deployment to Localhost
+## Deployment-to-Localhost
 
 2. Build as mentioned in [Build](#Build).
 2. In your terminal run `docker build -t myimage .` in the root directory
