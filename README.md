@@ -14,11 +14,11 @@
 
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
-1. [Building for Deployment](#Building-for-Deployment)
-1. [Local Deployment](#Deployment-to-Localhost)
+1. [Building-for-Deployment](#Building-for-Deployment)
+1. [Local-Deployment](#Deployment-to-Localhost)
 1. [TechStack](#TechStack)
 1. [Pitfalls](#pitfalls)
-1. [ImportantFilePaths](#ImportantFilePaths)
+1. [Important-File-Paths](#Important-File-Paths)
 
 ## Usage
 
@@ -140,7 +140,7 @@ The following technologies were used in this project:
 
 5) Significant documentation was made in the Proxy Description Server fork. If you are using this file, please refer to the documentation here if you are lost. Note: Every project was coded seperately, so functionality may be difference across different proxies in this group.
 
-### Important File Paths
+### Important-File-Paths
  - Router is located in src/index.js
  - Shamazon Description Component is located in src/components/
  - All other components are located in:
