@@ -22,14 +22,16 @@
 
 ## Usage
 
+This guide is for Unix-like users only. 
 
 To run, open two terminals.
 
 In the first: type npm run server
 In the second: type npm start
 
-You will notice there is no database! You must seed and create one yourself. The database port in use is currently 5432. 4 sample database dumps are located and named for each component is located in server.js. The ports used in this project are 5432 for Postgres and 27017 for Mongo. 
+You will notice there is no database! You must seed and create one yourself. The database port in use is currently 5432. 4 sample database dumps are located and named for each component that is being referenced in Sample-Seed-Data. 
 
+The ports used in this project are 5432 for Postgres and 27017 for Mongo. 
 
 
 ## Requirements
@@ -40,21 +42,27 @@ You will notice there is no database! You must seed and create one yourself. The
 In order to build, please do the following:
 
   1) Point the server file in server/server.js from targeting ['..', 'public'] to  ['..', 'build'] then: 
+
   2a) Change the relative file path for get requests in src/components/App.js to target itself.
-  - for Server: server/server.js from line 32-35
-  - for App.js: src/components/App.js from line 50
+  ```
+  for Server: server/server.js from line 325
+  for App.js: src/components/App.js from ne 50
+  ```
   OR
+  
   2b) Alternatively, host the client in App and the hosted Server on two different ports. If this is done, the file path for client App must point towards the Server.
+
   3) type: npm run build
   4) type: npm run server
  
 ## Deployment to Localhost
 
 2. Build as mentioned in [Build](#Build).
+2. Ensure you have docker-compose and docker as mentioned in [Tech Stack](#tech-stack)
 2. In your terminal run `docker build -t myimage .` in the root directory
 2. type touch docker-compose.yml file in a seperate directory.
 2. move the description-server.sql from the server/Example-Data/description-server.sql file into the same directory as the docker-compose.yml file.
-2. Create a docker compose file! It should like this:
+2. In your terminal type vim docker.compose.yml and edit your docker.compose to look like this:
 
 ```
 version: '3'
@@ -85,7 +93,8 @@ services:
     This may fail if your image is not named 'myimage' or if any of 
     your ports are in use on your docker server! 
 
-    Read up on Docker kill if a port error happens! https://docs.docker.com/engine/reference/commandline/kill/
+    Docker Kill to Remove Docker Ports:
+    https://docs.docker.com/engine/reference/commandline/kill/
 
     NOTE 2: Spacing and syntax needs to be exact. 
 
@@ -104,12 +113,13 @@ The following technologies were used in this project:
 
     Outside technologies:
 
-    Create React App v1.5.2
-    Docker v18.03.1
-    Postgres v10.3,
-    MongoDB v3.6.3,
-    Jest v5.6.0,
-    Enzyme v5.6.0
+    create-react-app v1.5.2
+    docker-compose  v1.21
+    docker v18.03.1
+    postgres v10.3,
+    mongodb v3.6.3,
+    jest v5.6.0,
+    enzyme v5.6.0
 
     Build Dependencies:
     
@@ -133,13 +143,17 @@ The following technologies were used in this project:
 3. Program is compiled using react create app. If webpack is needed, ***WARNING*** you are able to use npm run eject. *** However, this is irreversible. Please do this on a seperate branch as it may break.
 3. When Deploying to Production:
 
-  1) Point the server from targeting ../public to ../build then: 
+  1) Point the server from targeting ../public to ../build then Pick Between:
+
   2a) Change the relative file path for get requests in src/components/App.js to target itself.
      ```
      for Server: server/server.js from line 32-35
      for App.js: src/components/App.js from line 50
      ```
+  
   OR
+
+
   2b) Alternatively, host the client in App and the hosted Server on two different ports. If this is done, the file path for client App must point towards the Server.
   3) Run npm build
   4) Launch the server.
@@ -154,6 +168,7 @@ The following technologies were used in this project:
  - Shamazon Description Component is located in src/components/
  - All other components are located in:
   src/components/OtherCompos
+ - Sample Seed Data is found in sample-seed-data/
 
 
 
