@@ -8,7 +8,7 @@ import CustomerReviews from './customerReviews';
 import PriceBox from './PriceBox';
 import Stock from './Stock';
 import ItemDescription from './ItemDescription';
-import '../../src/index.css';
+// import '../../src/index.css';
 
 class App extends Component {
   constructor(props) {

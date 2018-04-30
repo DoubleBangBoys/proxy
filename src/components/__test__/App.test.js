@@ -7,17 +7,22 @@ import App from '../App';
 
 enzyme.configure({ adapter: new Adapter() });
 
-describe('<App />', () => {
-  const component = enzyme.shallow(<App />);
-  it('renders 1 <App /> component', () => {
-    expect(component).toHaveLength(1);
+
+describe('App', () => {
+  it('should be defined', () => {
+    const id = 10;
+    const wrapper = enzyme.shallow(<App
+      id={id}
+    />);
+    expect(wrapper).toBeDefined();
+  });
+
+  it('should render correctly', () => {
+    const id = 10;
+
+    const tree = enzyme.shallow(<App
+      id={id}
+    />);
+    expect(tree).toMatchSnapshot();
   });
 });
-
-// work in progress
-// it('should call setRelatedProducts when component mounts', () => {
-//   const spy = jest.spyOn(App.prototype, 'setRelatedProducts');
-//   const component = enzyme.mount(<App />);
-//   component.update();
-//   expect(spy).toHaveBeenCalled();
-// });

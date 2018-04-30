@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 
 class ItemDescription extends Component {
+
   render() {
     return (
       <div id="ItemDescription">
+      {console.log(this.props)}
         <ul>
           {this.props.array.map(param => <li>{param}</li>)
              }
