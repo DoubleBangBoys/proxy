@@ -7,6 +7,7 @@ import PhotoGallery from './components/OtherCompos/Photo-Gallery-Server/client/s
 import RelatedItems from './components/OtherCompos/Related-Items-Server/client/src/components/App';
 import ReviewServer from './components/OtherCompos/Review-Server/client/src/components/App';
 import App from './components/App';
+import './index.css'; 
 
 
 const indexRender = (props) => {
@@ -15,7 +16,8 @@ const indexRender = (props) => {
     <div>
       <div className="HeaderImage" />
       <div className="flexBoxStart">
-        <PhotoGallery id={id}
+        <PhotoGallery
+          id={id}
           Modal={Modal}
         />
         <App id={id} />
@@ -36,7 +38,6 @@ const indexRender = (props) => {
 };
 
 render(
-
   <Router history={browserHistory}>
     <Route path="/">
       <IndexRoute component={indexRender} />

@@ -8,7 +8,6 @@ import CustomerReviews from './customerReviews';
 import PriceBox from './PriceBox';
 import Stock from './Stock';
 import ItemDescription from './ItemDescription';
-// import '../../src/index.css';
 
 class App extends Component {
   constructor(props) {
@@ -68,6 +67,7 @@ class App extends Component {
   //     throw err;
   //   });
   // }
+
   /**
     * Gets the arrays from Description Data and pushes it into an array to prevent
     * a secondary call to database.
@@ -156,7 +156,9 @@ class App extends Component {
 
           <PriceBox stringPrice={this.renderedPrice()} />
           <Stock renderInventory={this.renderedTotalInventory()} />
-          <ItemDescription array={this.getArraysAndRender()} />
+          <ItemDescription
+            array={this.getArraysAndRender()}
+          />
           <div id="Compare With Similar Items">
             <a href="#">Compare with similar items</a>
           </div>
